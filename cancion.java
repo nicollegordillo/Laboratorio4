@@ -1,4 +1,4 @@
-//
+
 //
 //  @ Project : Laboratorio4
 //  @ File Name : cancion.java
@@ -16,7 +16,7 @@ public class cancion implements reproduccion{
 	private String autor;
 	private String genero;
 	@Override
-	public void cambiar_c(boolean cambiar) {
+	public void cambiar_c(boolean cambiar){
 	}
 	@Override
 	public void escuchar() {
@@ -61,5 +61,9 @@ public class cancion implements reproduccion{
 	}
 	
 	public cancion(String nombre, String duracion, String autor, String genero) {
+		this.nombre=nombre;
+		this.duracion=duracion;
+		this.autor=autor;
+		this.genero=genero;
 	}
 }

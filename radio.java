@@ -16,6 +16,10 @@ import java.util.ArrayList;
 public class radio implements modo_estado,modo_volumen,productividad,modo_radio {
 	private ArrayList<cancion> canciones;
 	private ArrayList<contacto> contactos;
+	public radio(){
+		canciones= new ArrayList<>();
+		contactos= new ArrayList<>();
+	}
 	public void Setcanciones(ArrayList<cancion> canciones) {
 		this.canciones=canciones;
 	}
@@ -32,7 +36,8 @@ public class radio implements modo_estado,modo_volumen,productividad,modo_radio 
 		return contactos;
 	}
 	@Override
-	public void viajes(String destino) {
+	public String viajes(String destino) {
+		return "";
 	}
 	@Override
 	public void cambiar(boolean cambiar) {

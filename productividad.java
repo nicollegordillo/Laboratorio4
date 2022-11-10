@@ -11,5 +11,5 @@
 
 
 public interface productividad {
-	public void viajes(String destino);
+	public String viajes(String destino);
 }

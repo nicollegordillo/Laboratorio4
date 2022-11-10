@@ -49,5 +49,7 @@ public class contacto implements telefono {
 	}
 	
 	public contacto(String nombre, String telefono) {
+		this.nombre=nombre;
+		this.telefono=telefono;
 	}
 }
