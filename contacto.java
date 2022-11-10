@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 //
 //
 //  @ Project : Laboratorio4
@@ -10,25 +12,9 @@
 
 
 
-public class contacto implements telefono {
+public class contacto {
 	private String nombre;
 	private String telefono;
-	@Override
-	public void contactos() {
-	}
-	@Override
-	public void llamar() {
-	}
-	@Override
-	public void audio(boolean cambiar) {
-	}
-	@Override
-	public void conexion(boolean cambiar) {
-	}
-	@Override
-	public void finalizar() {
-	}
-	
 	public void Setnombre(String nombre) {
 		this.nombre=nombre;
 	}
@@ -46,10 +32,18 @@ public class contacto implements telefono {
 	}
 	
 	public contacto() {
+		nombre="";
+		telefono="";
 	}
 	
 	public contacto(String nombre, String telefono) {
 		this.nombre=nombre;
 		this.telefono=telefono;
+	}
+	@Override
+	public String toString(){
+		String resultado="";
+		resultado= "Nombre: "+nombre+"\nTeléfono: "+telefono;
+		return resultado;
 	}
 }

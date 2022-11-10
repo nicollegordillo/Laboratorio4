@@ -11,5 +11,5 @@
 
 
 public interface modo_volumen {
-	public void volumen(boolean cambiar);
+	public void volumen(Boolean flag);
 }

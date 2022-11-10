@@ -13,8 +13,8 @@ import java.util.ArrayList;
 
 
 public interface modo_radio {
-	public void cambiar(boolean cambiar);
-	public void cambiar_e(boolean cambiar);
-	public void guardar(ArrayList<cancion> canciones);
-	public void cargar();
+	public void cambiar(Boolean flag);
+	public void cambiar_e(Boolean flag);
+	public void guardar(ArrayList<Double> lista, Double emisora);
+	public void cargar(ArrayList<Double> lista);
 }

@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 //
 //  @ Project : Laboratorio4
@@ -10,20 +11,12 @@
 
 
 
-public class cancion implements reproduccion{
+public class cancion {
 	private String nombre;
-	private String duracion;
+	private String tiempo;
 	private String autor;
 	private String genero;
-	@Override
-	public void cambiar_c(boolean cambiar){
-	}
-	@Override
-	public void escuchar() {
-	}
-	@Override
-	public void seleccionar() {
-	}
+	
 	
 	public void Setnombre(String nombre) {
 		this.nombre=nombre;
@@ -33,12 +26,12 @@ public class cancion implements reproduccion{
 		return nombre;
 	}
 	
-	public void Setduracion(String duracion) {
-		this.duracion=duracion;
+	public void Setduracion(String tiempo) {
+		this.tiempo=tiempo;
 	}
 	
-	public String Getduracion() {
-		return duracion;
+	public String Gettiempo() {
+		return tiempo;
 	}
 	
 	public void Setautor(String autor) {
@@ -58,12 +51,24 @@ public class cancion implements reproduccion{
 	}
 	
 	public cancion() {
+		nombre="";
+		tiempo="";
+		autor="";
+		genero="";
 	}
 	
-	public cancion(String nombre, String duracion, String autor, String genero) {
+	public cancion(String nombre, String tiempo, String autor, String genero) {
 		this.nombre=nombre;
-		this.duracion=duracion;
+		this.tiempo=tiempo;
 		this.autor=autor;
 		this.genero=genero;
 	}
+	@Override
+	public String toString(){
+		String resultado="";
+		resultado= "Canción: "+nombre+"\nDuración: "+tiempo+"\nGénero: "+genero+"\nAutor: "+autor;
+		return resultado;
+	}
+
+	
 }

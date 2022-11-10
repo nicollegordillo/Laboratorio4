@@ -11,5 +11,5 @@
 
 
 public interface modo_estado {
-	public void estado(boolean cambiar);
+	public void estado(Boolean state);
 }

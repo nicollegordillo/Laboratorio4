@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 //
 //
 //  @ Project : Laboratorio4
@@ -13,7 +15,7 @@
 public interface modo_telefono {
 	public void contactos(ArrayList<contacto> lista);
 	public void llamar(ArrayList<contacto> lista);
-	public void audio(boolean flag);
+	public void audio(Boolean flag);
 	public void conexion(boolean conection);
 	public void finalizar();
 }

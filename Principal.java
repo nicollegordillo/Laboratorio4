@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 //
 //
 //  @ Project : Laboratorio4
@@ -6,10 +8,10 @@
 //  @ Author : 
 //
 //
+
 import java.util.Scanner;
 import javax.lang.model.util.ElementScanner6;
 import java.util.ArrayList;
-
 
 
 public class Principal {
@@ -26,11 +28,11 @@ public class Principal {
 
 		//PlayList 1
 		ArrayList <cancion> hitsMundial = new ArrayList<cancion>();
-		cancion elEfecto = new cancion("El efecto","Bad Bunny","Regueton","3:33 min"); 
-		cancion unHoly = new cancion("Unholy", "Sam Smith","3:36 min");
-		cancion laBachata = new cancion("La Bachata", "Manuel Turizo", "3:43");
-		cancion asItVas = new cancion("As It Vas", "Harry Styles", "3:47 min");
-		cancion mePortoBonito = new cancion("Me Porto Bonito", "Bad Bunny", "3:58 min");
+		cancion elEfecto = new cancion("El efecto","3:33 min","Bad Bunny","Regueton"); 
+		cancion unHoly = new cancion("Unholy","3:36 min", "Sam Smith","Pop");
+		cancion laBachata = new cancion("La Bachata","3:43", "Manuel Turizo", "Bachata");
+		cancion asItVas = new cancion("As It Vas","3:47 min", "Harry Styles", "Pop");
+		cancion mePortoBonito = new cancion("Me Porto Bonito", "3:58 min","Bad Bunny", "Regueton");
 		hitsMundial.add(elEfecto);
 		hitsMundial.add(unHoly);
 		hitsMundial.add(laBachata);
@@ -43,9 +45,9 @@ public class Principal {
 		try{
 			while(op1 != 7){
 				if(op1 == 1){
-					hitsMundial.estado(true);
+					yosi_sideral.estado(true);
 				}
-				if(hitsMundial.get_estado()=="Apagado"){
+				if(yosi_sideral.getestado()=="Apagado"){
 					System.out.println("Radio está apagado");
 					System.out.println("Radio Hits Mundiales \n1.Encender \n2.Cambiar volumen \n3.Modo Radio \n4.Modo Reproduccion \n5.Modo Telefono \n6.Modo Productividad \n7.Apagar");
 					op1 = teclado.nextInt();
@@ -53,7 +55,7 @@ public class Principal {
 				else{
 					a = 0;
 					int b = 0;
-					System.out.println("***************** Radio Hits Mundiales *****************")
+					System.out.println("***************** Radio Hits Mundiales *****************");
 					op1 = teclado.nextInt();
 					if(op1 == 2){
 						while(a !=3){
@@ -65,7 +67,11 @@ public class Principal {
 
 			}
 
-		}		
-
+		}
+		catch(Exception e)
+		{
+			System.out.println("Ingrese algo válido");
+		}
+	
 	}
 }
