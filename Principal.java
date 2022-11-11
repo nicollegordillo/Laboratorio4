@@ -33,11 +33,13 @@ public class Principal {
 		cancion laBachata = new cancion("La Bachata","3:43", "Manuel Turizo", "Bachata");
 		cancion asItVas = new cancion("As It Vas","3:47 min", "Harry Styles", "Pop");
 		cancion mePortoBonito = new cancion("Me Porto Bonito", "3:58 min","Bad Bunny", "Regueton");
+		cancion Mercy = new cancion("Mercy", "3:29 min", "Shawn Mendes", "Pop");
 		hitsMundial.add(elEfecto);
 		hitsMundial.add(unHoly);
 		hitsMundial.add(laBachata);
 		hitsMundial.add(asItVas);
 		hitsMundial.add(mePortoBonito);
+		hitsMundial.add(Mercy);
 
 		//Inicio del menu de seleccion del usuario
 		System.out.println("Radio Hits Mundiales \n1.Encender \n2.Cambiar volumen \n3.Modo Radio \n4.Modo Reproduccion \n5.Modo Telefono \n6.Modo Productividad \n7.Apagar");
