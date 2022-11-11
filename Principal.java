@@ -51,11 +51,11 @@ public class Principal {
 			op1 = teclado.nextInt();
 			teclado.nextLine();
 			if(op1==1){
-				yosi_sideral.estado(true);
-				System.out.println("Radio Hits Mundiales \n1.Cambiar volumen \n2.Modo Radio \n3.Modo Reproduccion \n4.Modo Telefono \n5.Modo Productividad \n6.Apagar");
-				op2 = teclado.nextInt();
-				teclado.nextLine();
 				while(continuar2){
+					yosi_sideral.estado(true);
+					System.out.println("Radio Hits Mundiales \n1.Cambiar volumen \n2.Modo Radio \n3.Modo Reproduccion \n4.Modo Telefono \n5.Modo Productividad \n6.Apagar");
+					op2 = teclado.nextInt();
+					teclado.nextLine();
 					if(op2==2){
 						System.out.println("1. Subir volumen \n2. Bajar volumen");
 						op3=teclado.nextInt();
