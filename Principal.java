@@ -22,6 +22,7 @@ public class Principal {
 		Boolean continuar2 = true;
 		int op1=0;
 		int op2=0;
+		int op3=0;
 
 		//creacion radio y listas de canciones
 		radio yosi_sideral = new radio();
@@ -56,6 +57,15 @@ public class Principal {
 				teclado.nextLine();
 				while(continuar2){
 					if(op2==2){
+						System.out.println("1. Subir volumen \n2. Bajar volumen");
+						op3=teclado.nextInt();
+						teclado.nextLine();
+						if(op3==1){
+							yosi_sideral.volumen(true);
+						}
+						else if(op3==2){
+							yosi_sideral.volumen(false);
+						}
 
 					}
 					else if(op2==3){
@@ -68,6 +78,7 @@ public class Principal {
 	
 					}
 					else if(op2==6){
+						yosi_sideral.estado(false);
 						continuar2=false;
 					}
 					else{
