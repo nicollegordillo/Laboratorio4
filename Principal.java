@@ -17,8 +17,11 @@ import java.util.ArrayList;
 public class Principal {
 	public static void main(String[] args) {
 		Scanner teclado= new Scanner(System.in);
-		int op1 = 0;
+		Boolean continuar = true;
 		int a = 0;
+		Boolean continuar2 = true;
+		int op1=0;
+		int op2=0;
 
 		//creacion radio y listas de canciones
 		radio yosi_sideral = new radio();
@@ -42,37 +45,45 @@ public class Principal {
 		hitsMundial.add(Mercy);
 
 		//Inicio del menu de seleccion del usuario
-		System.out.println("Radio Hits Mundiales \n1.Encender \n2.Cambiar volumen \n3.Modo Radio \n4.Modo Reproduccion \n5.Modo Telefono \n6.Modo Productividad \n7.Apagar");
-		op1 = teclado.nextInt();
-		try{
-			while(op1 != 7){
-				if(op1 == 1){
-					yosi_sideral.estado(true);
-				}
-				if(yosi_sideral.getestado()=="Apagado"){
-					System.out.println("Radio está apagado");
-					System.out.println("Radio Hits Mundiales \n1.Encender \n2.Cambiar volumen \n3.Modo Radio \n4.Modo Reproduccion \n5.Modo Telefono \n6.Modo Productividad \n7.Apagar");
-					op1 = teclado.nextInt();
-				}
-				else{
-					a = 0;
-					int b = 0;
-					System.out.println("***************** Radio Hits Mundiales *****************");
-					op1 = teclado.nextInt();
-					if(op1 == 2){
-						while(a !=3){
-							
-						}
+		while(continuar){
+			System.out.println("Radio Hits Mundiales \n1.Encender \n2.Apagar");
+			op1 = teclado.nextInt();
+			teclado.nextLine();
+			if(op1==1){
+				yosi_sideral.estado(true);
+				System.out.println("Radio Hits Mundiales \n1.Cambiar volumen \n2.Modo Radio \n3.Modo Reproduccion \n4.Modo Telefono \n5.Modo Productividad \n6.Apagar");
+				op2 = teclado.nextInt();
+				teclado.nextLine();
+				while(continuar2){
+					if(op2==2){
+
+					}
+					else if(op2==3){
+	
+					}
+					else if(op2==4){
+	
+					}
+					else if(op2==5){
+	
+					}
+					else if(op2==6){
+						continuar2=false;
+					}
+					else{
+						System.out.println("Ingrese algo válido");
 					}
 
 				}
-
+				
+			}
+			else if(op1==2){
+				continuar=false;
+			}
+			else{
+				System.out.println("Ingrese algo válido");
 			}
 
-		}
-		catch(Exception e)
-		{
-			System.out.println("Ingrese algo válido");
 		}
 	
 	}
