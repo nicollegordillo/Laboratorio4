@@ -33,6 +33,7 @@ public class Principal {
 		int op7=0;
 		int op8=0;
 		int op9=0;
+		int op10=0;
 		String respuesta="";
 
 		//creacion radio y listas de canciones
@@ -119,13 +120,24 @@ public class Principal {
 							op5=teclado.nextInt();
 							teclado.nextLine();
 							if(op5==1){
+								System.out.println("1. Cambiar hacia adelante \n2. Cambiar hacia atrás");
+								op10=teclado.nextInt();
+								teclado.nextLine();
+								if(op10==1){
+									yosi_sideral.cambiar_c(true,hitsMundial);
+
+								}
+								else if(op10==2){
+									yosi_sideral.cambiar_c(false,hitsMundial);
+								}
 
 							}
 							else if(op5==2){
+								yosi_sideral.escuchar(hitsMundial);
 
 							}
 							else if(op5==3){
-
+								yosi_sideral.seleccionar(hitsMundial);
 							}
 							else if(op5==4){
 								continuar4=false;
