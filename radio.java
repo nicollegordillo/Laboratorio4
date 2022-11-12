@@ -26,49 +26,101 @@ public class radio implements modo_estado,modo_volumen,modo_productividad,modo_r
 	private Boolean conectar;
 	Scanner Teclado = new Scanner(System.in);
 
+	
+	/** 
+	 * @param posicion
+	 */
 	//Sets y get de objetos de la lista
 	public void setposicion(int posicion) {
 		this.posicion=posicion;
 	}
+	
+	/** 
+	 * @return Boolean
+	 */
 	public Boolean get_conectar()
     {
         return conectar;
     }
+	
+	/** 
+	 * @return int
+	 */
 	public int getposicion() {
 		return posicion;
 	}
+	
+	/** 
+	 * @param frecuencia
+	 */
 	public void setfrecuencia(String frecuencia) {
 		this.frecuencia=frecuencia;
 	}
 	
+	
+	/** 
+	 * @return String
+	 */
 	public String getfrecuencia() {
 		return frecuencia;
 	}
+	
+	/** 
+	 * @param emisora
+	 */
 	public void setemisora(double emisora) {
 		this.emisora=emisora;
 	}
 	
+	
+	/** 
+	 * @return double
+	 */
 	public double getemisora() {
 		return emisora;
 	}
+	
+	/** 
+	 * @param volumen
+	 */
 	public void setvolumen(int volumen) {
 		this.volumen=volumen;
 	}
 	
+	
+	/** 
+	 * @return int
+	 */
 	public int getvolumen() {
 		return volumen;
 	}
+	
+	/** 
+	 * @param modo
+	 */
 	public void setmodo(String modo) {
 		this.modo=modo;
 	}
 	
+	
+	/** 
+	 * @return String
+	 */
 	public String getmodo() {
 		return modo;
 	}
+	
+	/** 
+	 * @param estado
+	 */
 	public void set_estado(String estado) {
 		this.estado=estado;
 	}
 	
+	
+	/** 
+	 * @return String
+	 */
 	public String get_estado() {
 		return estado;
 	}
@@ -84,6 +136,10 @@ public class radio implements modo_estado,modo_volumen,modo_productividad,modo_r
 		conectar=false;
 	}
 	
+	
+	/** 
+	 * @param flag
+	 */
 	//INICIAN METODOS VOID USADOS EN LA CLASE PRINCIPAL
 	@Override
 	public void cambiar(Boolean flag) {//Metodo para cambiar de frecuencia
@@ -95,6 +151,10 @@ public class radio implements modo_estado,modo_volumen,modo_productividad,modo_r
 		}
 		System.out.println("La frecuencia se ha cambiado a: "+frecuencia);
 	}
+	
+	/** 
+	 * @param flag
+	 */
 	@Override
 	public void cambiar_e(Boolean flag) {//Metodo para cambiar de emisora
 		if(flag){
@@ -106,6 +166,11 @@ public class radio implements modo_estado,modo_volumen,modo_productividad,modo_r
 		System.out.println("La emisora es: "+emisora);
 		
 	}
+	
+	/** 
+	 * @param lista
+	 * @param emisora
+	 */
 	@Override
 	public void guardar(ArrayList<Double> lista, Double emisora) {//Metodo para guardar emisoras en el ArrayList Lista de la interfaz modo_radio
 		if(lista.size()<=50){
@@ -116,6 +181,10 @@ public class radio implements modo_estado,modo_volumen,modo_productividad,modo_r
 		}
 		
 	}
+	
+	/** 
+	 * @param lista
+	 */
 	@Override
 	public void cargar(ArrayList<Double> lista) {//Metodo para sintonizar una emisora especifica ingresada por el usuario
 		int j=1;
@@ -129,6 +198,11 @@ public class radio implements modo_estado,modo_volumen,modo_productividad,modo_r
 		System.out.println("Se ha cargado la emisora: "+emisora);
 		
 	}
+	
+	/** 
+	 * @param flag
+	 * @return String
+	 */
 	//modo productividad
 	@Override
 	public String viajes(String destino) {//Metodo para simular el inicio de un viaje habiendo ingresado un destino por el usuario
@@ -138,6 +212,10 @@ public class radio implements modo_estado,modo_volumen,modo_productividad,modo_r
 		int min= rand.nextInt(60)+1;
 		return "Iniciemos el viaje \nPara ir a "+destino+" siga las indicaciones del GPS \nEl destino está a "+km+" km"+ " y llegará allí en "+hora+" horas con "+min+" minutos";
 	}
+	
+	/** 
+	 * @param flag
+	 */
 	//modo volumen
 	@Override
 	public void volumen(Boolean flag) {//Metodo para subir y bajar el volumen
@@ -155,6 +233,10 @@ public class radio implements modo_estado,modo_volumen,modo_productividad,modo_r
 		System.out.println("Volumen: "+volumen);//Se imprime el volumen actual
 		
 	}
+	
+	/** 
+	 * @param state
+	 */
 	//modo estado
 	@Override
 	public void estado(Boolean state) {//Metodo para encender y apagar el telefono
@@ -168,6 +250,11 @@ public class radio implements modo_estado,modo_volumen,modo_productividad,modo_r
 		System.out.println("Estado: "+estado);
 		
 	}
+	
+	/** 
+	 * @param flag
+	 * @param lista
+	 */
 	//modo reproducción
 	@Override
 	public void cambiar_c(Boolean flag, ArrayList<cancion> lista) {//Metodo para visualizar los objetos de tipo cancion en el ArrayList
@@ -191,12 +278,20 @@ public class radio implements modo_estado,modo_volumen,modo_productividad,modo_r
 		
 		
 	}
+	
+	/** 
+	 * @param lista
+	 */
 	@Override
 	//METODOS RELACIONADOS A LA CLASE CANCIONES
 	public void escuchar(ArrayList<cancion> lista) {
 		System.out.println(lista.get(posicion).toString());
 		
 	}
+	
+	/** 
+	 * @param lista
+	 */
 	@Override
 	public void seleccionar(ArrayList<cancion> lista) {
 		for(cancion i: lista){
@@ -204,6 +299,10 @@ public class radio implements modo_estado,modo_volumen,modo_productividad,modo_r
 		}
 		
 	}
+	
+	/** 
+	 * @param lista
+	 */
 	//modo telefono
 	@Override
 	//METODOS RELACIONADOS A LA VISUALIZACION DE CONTACTOS
@@ -213,6 +312,10 @@ public class radio implements modo_estado,modo_volumen,modo_productividad,modo_r
 		}
 		
 	}
+	
+	/** 
+	 * @param lista
+	 */
 	@Override
 	public void llamar(ArrayList<contacto> lista) {
 		int j=1;
@@ -225,6 +328,10 @@ public class radio implements modo_estado,modo_volumen,modo_productividad,modo_r
 		System.out.println(lista.get(c).toString());
 		
 	}
+	
+	/** 
+	 * @param flag
+	 */
 	@Override
 	public void audio(Boolean flag) {//Metodo para cambiar de audio
 		if(flag){
@@ -235,6 +342,10 @@ public class radio implements modo_estado,modo_volumen,modo_productividad,modo_r
 		}
 		System.out.println("Audio: "+modo);
 	}
+	
+	/** 
+	 * @param conection
+	 */
 	@Override
 	public void conexion(boolean conection) {
 		if(conection){

@@ -14,8 +14,6 @@ import java.util.ArrayList;
 
 //librerias necesarias para recibir datos del usuario y hacer los arreglos con contactos, emisoras y playlists
 import java.util.Scanner;
-import javax.lang.model.util.ElementScanner6;
-import java.util.ArrayList;
 
 
 public class Principal {
@@ -48,7 +46,6 @@ public class Principal {
 
 		//creacion radio y listas de canciones y contactos
 		radio yosi_sideral = new radio();
-		ArrayList <cancion> canciones = new ArrayList<cancion>();
 		ArrayList <contacto> contactos = new ArrayList<contacto>();
 		ArrayList <Double> emisoras = new ArrayList<Double>();
 

@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 
 //
 //  @ Project : Laboratorio4
@@ -17,35 +16,67 @@ public class cancion {
 	private String autor;
 	private String genero;
 	
+	
+	/** 
+	 * @param nombre
+	 */
 	//Sets y gets de cancion
 	public void Setnombre(String nombre) {
 		this.nombre=nombre;
 	}
 	
+	
+	/** 
+	 * @return String
+	 */
 	public String Getnombre() {
 		return nombre;
 	}
 	
+	
+	/** 
+	 * @param tiempo
+	 */
 	public void Setduracion(String tiempo) {
 		this.tiempo=tiempo;
 	}
 	
+	
+	/** 
+	 * @return String
+	 */
 	public String Gettiempo() {
 		return tiempo;
 	}
 	
+	
+	/** 
+	 * @param autor
+	 */
 	public void Setautor(String autor) {
 		this.autor=autor;
 	}
 	
+	
+	/** 
+	 * @return String
+	 */
 	public String Getautor() {
 		return autor;
 	}
 	
+	
+	/** 
+	 * @param genero
+	 */
 	public void Setgenero(String genero) {
 		this.genero=genero;
 	}
 	
+	
+	/** 
+	 * @return String
+	 */
 	public String Getgenero() {
 		return genero;
 	}
@@ -65,6 +96,10 @@ public class cancion {
 		this.autor=autor;
 		this.genero=genero;
 	}
+	
+	/** 
+	 * @return String
+	 */
 	@Override
 	//ToString que imprime las propiedades de los elementos cancion del ArrayList canciones en modo_reproduccion
 	public String toString(){

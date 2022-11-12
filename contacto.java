@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+
 
 //
 //
@@ -15,19 +15,35 @@ public class contacto {
 	private String nombre;
 	private String telefono;
 
+	
+	/** 
+	 * @param nombre
+	 */
 	//Sets y gets de contacto
 	public void Setnombre(String nombre) {
 		this.nombre=nombre;
 	}
 	
+	
+	/** 
+	 * @return String
+	 */
 	public String Getnombre() {
 		return nombre;
 	}
 	
+	
+	/** 
+	 * @param telefono
+	 */
 	public void Settelefono(String telefono) {
 		this.telefono=telefono;
 	}
 	
+	
+	/** 
+	 * @return String
+	 */
 	public String Gettelefono() {
 		return telefono;
 	}
@@ -41,6 +57,10 @@ public class contacto {
 		this.nombre=nombre;
 		this.telefono=telefono;
 	}
+	
+	/** 
+	 * @return String
+	 */
 	@Override
 	//ToString que imprime las propiedades de los elementos contacto del ArrayList canciones en modo_telefono
 	public String toString(){
