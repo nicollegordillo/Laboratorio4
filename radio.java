@@ -7,14 +7,16 @@ import java.util.Random;
 //  @ Project : Laboratorio4
 //  @ File Name : radio.java
 //  @ Date : 11/8/2022
-//  @ Author : 
+//  @ Author : Nicolle Gordillo y Ana Villela
 //
-//
-
-
+//La clase radio se encarga de darle forma a los objetos de tipo radio mediante atributos
+//Tambien brinda metodos sets y gets usados en la clase principal
+//Brinda metodos void utilizados en la opcion Modo Radio del menu principal del simulador de telefono
 
 
 public class radio implements modo_estado,modo_volumen,modo_productividad,modo_radio,modo_telefono,modo_reproduccion {
+
+	//Atributos de los objetos de tipo radio
 	private int posicion;
 	private String frecuencia;
 	private double emisora;
@@ -23,6 +25,8 @@ public class radio implements modo_estado,modo_volumen,modo_productividad,modo_r
 	private String modo;
 	private Boolean conectar;
 	Scanner Teclado = new Scanner(System.in);
+
+	//Sets y get de objetos de la lista
 	public void setposicion(int posicion) {
 		this.posicion=posicion;
 	}
@@ -68,6 +72,8 @@ public class radio implements modo_estado,modo_volumen,modo_productividad,modo_r
 	public String get_estado() {
 		return estado;
 	}
+
+	//Constructos con atributos definidos
 	public radio(){
 		posicion=0;
 		frecuencia="AM";
@@ -77,9 +83,10 @@ public class radio implements modo_estado,modo_volumen,modo_productividad,modo_r
 		modo="Speaker";
 		conectar=false;
 	}
-	//modo radio
+	
+	//INICIAN METODOS VOID USADOS EN LA CLASE PRINCIPAL
 	@Override
-	public void cambiar(Boolean flag) {
+	public void cambiar(Boolean flag) {//Metodo para cambiar de frecuencia
 		if(flag){
 			frecuencia="FM";
 		}
@@ -89,7 +96,7 @@ public class radio implements modo_estado,modo_volumen,modo_productividad,modo_r
 		System.out.println("La frecuencia se ha cambiado a: "+frecuencia);
 	}
 	@Override
-	public void cambiar_e(Boolean flag) {
+	public void cambiar_e(Boolean flag) {//Metodo para cambiar de emisora
 		if(flag){
 			emisora+=0.5;
 		}
@@ -100,7 +107,7 @@ public class radio implements modo_estado,modo_volumen,modo_productividad,modo_r
 		
 	}
 	@Override
-	public void guardar(ArrayList<Double> lista, Double emisora) {
+	public void guardar(ArrayList<Double> lista, Double emisora) {//Metodo para guardar emisoras en el ArrayList Lista de la interfaz modo_radio
 		if(lista.size()<=50){
 			lista.add(emisora);
 		}
@@ -110,7 +117,7 @@ public class radio implements modo_estado,modo_volumen,modo_productividad,modo_r
 		
 	}
 	@Override
-	public void cargar(ArrayList<Double> lista) {
+	public void cargar(ArrayList<Double> lista) {//Metodo para sintonizar una emisora especifica ingresada por el usuario
 		int j=1;
 		for(double i:lista){
 			System.out.println(j+" "+i);
@@ -124,7 +131,7 @@ public class radio implements modo_estado,modo_volumen,modo_productividad,modo_r
 	}
 	//modo productividad
 	@Override
-	public String viajes(String destino) {
+	public String viajes(String destino) {//Metodo para simular el inicio de un viaje habiendo ingresado un destino por el usuario
 		Random rand = new Random();
 		int km= rand.nextInt(200)+1;
 		int hora= rand.nextInt(10)+1;
@@ -133,7 +140,7 @@ public class radio implements modo_estado,modo_volumen,modo_productividad,modo_r
 	}
 	//modo volumen
 	@Override
-	public void volumen(Boolean flag) {
+	public void volumen(Boolean flag) {//Metodo para subir y bajar el volumen
 		if(flag){
 			volumen+=1;
 		}
@@ -142,15 +149,15 @@ public class radio implements modo_estado,modo_volumen,modo_productividad,modo_r
 				volumen-=1;
 			}
 			else{
-				System.out.println("No se puede bajar más el volumen");
+				System.out.println("No se puede bajar más el volumen");//Programacion defensiva en caso de alcanzar los limites 
 			}
 		}
-		System.out.println("Volumen: "+volumen);
+		System.out.println("Volumen: "+volumen);//Se imprime el volumen actual
 		
 	}
 	//modo estado
 	@Override
-	public void estado(Boolean state) {
+	public void estado(Boolean state) {//Metodo para encender y apagar el telefono
 		if(state){
 			estado="Encendido";
 
@@ -163,7 +170,7 @@ public class radio implements modo_estado,modo_volumen,modo_productividad,modo_r
 	}
 	//modo reproducción
 	@Override
-	public void cambiar_c(Boolean flag, ArrayList<cancion> lista) {
+	public void cambiar_c(Boolean flag, ArrayList<cancion> lista) {//Metodo para visualizar los objetos de tipo cancion en el ArrayList
 		if(flag){
 			if(posicion==lista.size()-1){
 				posicion=0;
@@ -185,6 +192,7 @@ public class radio implements modo_estado,modo_volumen,modo_productividad,modo_r
 		
 	}
 	@Override
+	//METODOS RELACIONADOS A LA CLASE CANCIONES
 	public void escuchar(ArrayList<cancion> lista) {
 		System.out.println(lista.get(posicion).toString());
 		
@@ -198,6 +206,7 @@ public class radio implements modo_estado,modo_volumen,modo_productividad,modo_r
 	}
 	//modo telefono
 	@Override
+	//METODOS RELACIONADOS A LA VISUALIZACION DE CONTACTOS
 	public void contactos(ArrayList<contacto> lista) {
 		for(contacto i: lista){
 			System.out.println(i.toString());
@@ -217,7 +226,7 @@ public class radio implements modo_estado,modo_volumen,modo_productividad,modo_r
 		
 	}
 	@Override
-	public void audio(Boolean flag) {
+	public void audio(Boolean flag) {//Metodo para cambiar de audio
 		if(flag){
 			modo="auriculares";
 		}
