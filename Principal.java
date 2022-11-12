@@ -20,10 +20,19 @@ public class Principal {
 		Boolean continuar = true;
 		Boolean continuar3=true;
 		Boolean continuar2 = true;
+		Boolean continuar4=true;
+		Boolean continuar5=true;
+		Boolean continuar6=true;
+		Boolean continuar7=true;
 		int op1=0;
 		int op2=0;
 		int op3=0;
 		int op4=0;
+		int op5=0;
+		int op6=0;
+		int op7=0;
+		int op8=0;
+		int op9=0;
 
 		//creacion radio y listas de canciones
 		radio yosi_sideral = new radio();
@@ -48,16 +57,22 @@ public class Principal {
 
 		//Inicio del menu de seleccion del usuario
 		while(continuar){
+			continuar2=true;
 			System.out.println("Radio Hits Mundiales \n1.Encender \n2.Apagar");
 			op1 = teclado.nextInt();
 			teclado.nextLine();
 			if(op1==1){
 				while(continuar2){
+					continuar3=true;
+					continuar4=true;
+					continuar5=true;
+					continuar6=true;
+					continuar7=true;
 					yosi_sideral.estado(true);
 					System.out.println("Radio Hits Mundiales \n1.Cambiar volumen \n2.Modo Radio \n3.Modo Reproduccion \n4.Modo Telefono \n5.Modo Productividad \n6.Apagar");
 					op2 = teclado.nextInt();
 					teclado.nextLine();
-					if(op2==2){
+					if(op2==1){
 						System.out.println("1. Subir volumen \n2. Bajar volumen");
 						op3=teclado.nextInt();
 						teclado.nextLine();
@@ -72,7 +87,7 @@ public class Principal {
 						}
 
 					}
-					else if(op2==3){
+					else if(op2==2){
 						while(continuar3){
 							System.out.println("Ahora se encuentra en el modo radio");
 							System.out.println("\n1. Cambiar frecuencia \n2. Cambiar emisora \n3. Guardar emisora \n4. Cargar emisora \n5. Salir");
@@ -96,11 +111,80 @@ public class Principal {
 						}
 						
 					}
+					else if(op2==3){
+						while(continuar4){
+							System.out.println("Ahora se encuentra en el modo Reproduccion");
+							System.out.println("\n1. Cambiar cancion \n2. Escuchar canción \n3. Seleccionar canción \n4. Salir");
+							op5=teclado.nextInt();
+							teclado.nextLine();
+							if(op5==1){
+
+							}
+							else if(op5==2){
+
+							}
+							else if(op5==3){
+
+							}
+							else if(op5==4){
+								continuar4=false;
+							}
+						}
+	
+					}
 					else if(op2==4){
+						System.out.println("Ahora se encuentra en el modo Telefono");
+						System.out.println("\n1. Conectar el teléfono \n2. Salir");
+						op8=teclado.nextInt();
+						teclado.nextLine();
+								if(op8==1){
+									while(continuar5){
+										System.out.println("\n1. Ver contactos \n2. Llamar un contacto \n3. Cambiar el audio \n4. Cargar emisora \n5. Desconectar el teléfono");
+										op6=teclado.nextInt();
+										teclado.nextLine();
+										if(op6==1){
+
+										}
+										else if(op6==2){
+											while(continuar7){
+												System.out.println("1. Finalizar llamada");
+												op9=teclado.nextInt();
+												teclado.nextLine();
+												if(op9==1){
+
+												}
+
+											}
+
+										}
+										else if(op6==3){
+
+										}
+										else if(op6==4){
+
+										}
+										else if(op6==5){
+											continuar5=false;
+										}
+									}
+								}
+								
+							
 	
 					}
 					else if(op2==5){
-	
+						while(continuar6){
+							System.out.println("Ahora se encuentra en el modo Productividad");
+							System.out.println("\n1. Planear viaje \n2. Salir");
+							op7=teclado.nextInt();
+							teclado.nextLine();
+							if(op7==1){
+
+							}
+							else if(op7==2){
+								continuar6=false;
+							}
+						}
 					}
 					else if(op2==6){
 						yosi_sideral.estado(false);
