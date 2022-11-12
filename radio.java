@@ -204,6 +204,7 @@ public class radio implements modo_estado,modo_volumen,modo_productividad,modo_r
 		int j=1;
 		for(contacto i: lista){
 			System.out.println(j+". "+i.toString());
+			j++;
 		}
 		System.out.println("Ingrese el contacto que quiere llamar: ");
 		int c= Teclado.nextInt()-1;
