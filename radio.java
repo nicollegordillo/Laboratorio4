@@ -21,11 +21,15 @@ public class radio implements modo_estado,modo_volumen,modo_productividad,modo_r
 	private int volumen;
 	private String estado;
 	private String modo;
+	private Boolean conectar;
 	Scanner Teclado = new Scanner(System.in);
 	public void setposicion(int posicion) {
 		this.posicion=posicion;
 	}
-	
+	public Boolean get_conectar()
+    {
+        return conectar;
+    }
 	public int getposicion() {
 		return posicion;
 	}
@@ -57,11 +61,11 @@ public class radio implements modo_estado,modo_volumen,modo_productividad,modo_r
 	public String getmodo() {
 		return modo;
 	}
-	public void setestado(String estado) {
+	public void set_estado(String estado) {
 		this.estado=estado;
 	}
 	
-	public String getestado() {
+	public String get_estado() {
 		return estado;
 	}
 	public radio(){
@@ -71,6 +75,7 @@ public class radio implements modo_estado,modo_volumen,modo_productividad,modo_r
 		volumen=0;
 		estado="Apagado";
 		modo="Speaker";
+		conectar=false;
 	}
 	//modo radio
 	@Override
@@ -229,6 +234,7 @@ public class radio implements modo_estado,modo_volumen,modo_productividad,modo_r
 		else{
 			System.out.println("Desconectado");
 		}
+		conectar=conection;
 		
 	}
 	@Override
