@@ -18,11 +18,12 @@ public class Principal {
 	public static void main(String[] args) {
 		Scanner teclado= new Scanner(System.in);
 		Boolean continuar = true;
-		int a = 0;
+		Boolean continuar3=true;
 		Boolean continuar2 = true;
 		int op1=0;
 		int op2=0;
 		int op3=0;
+		int op4=0;
 
 		//creacion radio y listas de canciones
 		radio yosi_sideral = new radio();
@@ -66,10 +67,34 @@ public class Principal {
 						else if(op3==2){
 							yosi_sideral.volumen(false);
 						}
+						else{
+							System.out.println("Ingrese algo válido");
+						}
 
 					}
 					else if(op2==3){
-	
+						while(continuar3){
+							System.out.println("Ahora se encuentra en el modo radio");
+							System.out.println("\n1. Cambiar frecuencia \n2. Cambiar emisora \n3. Guardar emisora \n4. Cargar emisora \n5. Salir");
+							op4=teclado.nextInt();
+							teclado.nextLine();
+							if(op4==1){
+
+							}
+							else if(op4==2){
+
+							}
+							else if(op4==3){
+
+							}
+							else if(op4==4){
+
+							}
+							else if(op4==5){
+								continuar3=false;
+							}
+						}
+						
 					}
 					else if(op2==4){
 	
