@@ -34,6 +34,9 @@ public class Principal {
 		int op8=0;
 		int op9=0;
 		int op10=0;
+		int frecuencia=0;
+		int emisora=0;
+		Double emisora1=0.0;
 		String respuesta="";
 
 		//creacion radio y listas de canciones
@@ -96,15 +99,38 @@ public class Principal {
 							op4=teclado.nextInt();
 							teclado.nextLine();
 							if(op4==1){
+								System.out.println("1. FM \n2. AM");
+								frecuencia=teclado.nextInt();
+								teclado.nextLine();
+								if(frecuencia==1){
+									yosi_sideral.cambiar(true);
+								}
+								else if(frecuencia==2){
+									yosi_sideral.cambiar(false);
+								}
 
 							}
 							else if(op4==2){
+								System.out.println("1. Subir \n2. Bajar");
+								emisora=teclado.nextInt();
+								teclado.nextLine();
+								if(emisora==1){
+									yosi_sideral.cambiar_e(true);
+								}
+								else if(emisora==2){
+									yosi_sideral.cambiar_e(false);
+								}
 
 							}
 							else if(op4==3){
+								System.out.println("Ingrese la emisora que desea guardar");
+								emisora1=teclado.nextDouble();
+								teclado.nextLine();
+								yosi_sideral.guardar(emisoras, emisora1);
 
 							}
 							else if(op4==4){
+								yosi_sideral.cargar(emisoras);
 
 							}
 							else if(op4==5){
@@ -152,7 +178,7 @@ public class Principal {
 						teclado.nextLine();
 								if(op8==1){
 									while(continuar5){
-										System.out.println("\n1. Ver contactos \n2. Llamar un contacto \n3. Cambiar el audio \n4. Cargar emisora \n5. Desconectar el teléfono");
+										System.out.println("\n1. Ver contactos \n2. Llamar un contacto \n3. Cambiar el audio  \n4. Desconectar el teléfono");
 										op6=teclado.nextInt();
 										teclado.nextLine();
 										if(op6==1){
@@ -174,9 +200,6 @@ public class Principal {
 
 										}
 										else if(op6==4){
-
-										}
-										else if(op6==5){
 											continuar5=false;
 										}
 									}
