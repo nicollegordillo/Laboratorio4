@@ -33,6 +33,7 @@ public class Principal {
 		int op7=0;
 		int op8=0;
 		int op9=0;
+		String respuesta="";
 
 		//creacion radio y listas de canciones
 		radio yosi_sideral = new radio();
@@ -179,7 +180,9 @@ public class Principal {
 							op7=teclado.nextInt();
 							teclado.nextLine();
 							if(op7==1){
-
+								System.out.println("¿A donde desea ir?");
+								respuesta=teclado.nextLine();
+								System.out.println(yosi_sideral.viajes(respuesta));
 							}
 							else if(op7==2){
 								continuar6=false;
