@@ -36,6 +36,7 @@ public class Principal {
 		int op10=0;
 		int frecuencia=0;
 		int emisora=0;
+		int audio=0;
 		Double emisora1=0.0;
 		String respuesta="";
 
@@ -182,22 +183,33 @@ public class Principal {
 										op6=teclado.nextInt();
 										teclado.nextLine();
 										if(op6==1){
-
+											yosi_sideral.contactos(contactos);
 										}
 										else if(op6==2){
+											continuar7=true;
+											yosi_sideral.llamar(contactos);
 											while(continuar7){
 												System.out.println("1. Finalizar llamada");
 												op9=teclado.nextInt();
 												teclado.nextLine();
 												if(op9==1){
-
+													yosi_sideral.finalizar();
+													continuar7=false;
 												}
 
 											}
 
 										}
 										else if(op6==3){
-
+											System.out.println("1. Auriculares \n2. Speaker");
+											audio=teclado.nextInt();
+											teclado.nextLine();
+											if(audio==1){
+												yosi_sideral.audio(true);
+											}
+											else if(audio==2){
+												yosi_sideral.audio(false);
+											}
 										}
 										else if(op6==4){
 											continuar5=false;
