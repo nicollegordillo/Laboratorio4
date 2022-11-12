@@ -46,6 +46,16 @@ public class Principal {
 		ArrayList <contacto> contactos = new ArrayList<contacto>();
 		ArrayList <Double> emisoras = new ArrayList<Double>();
 
+		//contactos
+		contacto c1= new contacto("James", "5416-6812");
+		contacto c2= new contacto("Andre", "5654-1235");
+		contacto c3= new contacto("Maddi", "2815-9564");
+		contacto c4= new contacto("Nick", "5517-6476");
+		contactos.add(c1);
+		contactos.add(c2);
+		contactos.add(c3);
+		contactos.add(c4);
+
 		//PlayList 1
 		ArrayList <cancion> hitsMundial = new ArrayList<cancion>();
 		cancion elEfecto = new cancion("El efecto","3:33 min","Bad Bunny","Regueton"); 
