@@ -5,7 +5,7 @@ import java.util.ArrayList;
 //  @ Project : Laboratorio4
 //  @ File Name : Principal.java
 //  @ Date : 11/8/2022
-//  @ Author : Nicolle Gordillo y Ana Villela
+//  @ Author : Nicolle Gordillo, Ana Villela y Wilson Calderon
 //
 //La clase principal es la encargada de simular el telefono con sus funciones de modo radio,telefono, productividad y reproduccion.
 //El simulador tambien tiene funciones como simular subir o bajar volumen y apagar o encender el simulador mismo.
